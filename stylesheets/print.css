@@ -59,10 +59,10 @@ header {
 }
 
 header h1 {
-  font-size: 48px;
+  font-size: 32px;
   font-weight: bold;
   line-height: 1.2;
-  color: #303030;
+  color: #6d6d6d;
   letter-spacing: -1px;
 }
 
@@ -140,7 +140,7 @@ h2 {
   margin-bottom: 8px;
   font-size: 22px;
   font-weight: bold;
-  color: #303030;
+  color: #6d6d6d;
 }
 
 h3 {
@@ -153,12 +153,12 @@ h3 {
 h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #303030;
+  color: #6d6d6d;
 }
 
 h5 {
   font-size: 1em;
-  color: #303030;
+  color: #6d6d6d;
 }
 
 h6 {

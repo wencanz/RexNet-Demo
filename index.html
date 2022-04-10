@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <!--[if lt IE 9]>
@@ -25,43 +26,63 @@
         </header>
 
         <section id="instruction_content">
-          <span style="font-size:19px; line-height:200%;"><em>Welcome to Relatable Explanations Demo! You can specify the <span style="color:#5288eb">speech sample</span>, view <span style="color:#5288eb">the system prediction</span> and corresponding <span style="color:#5288eb">explanations</span>.
+          <h1> How to use </h1>
+          <span style="font-size:17px; line-height:150%;"><em>
+            <ul style="margin-left:30px;">
+              <li>specify the <span style="color:#5288eb">speech sample</span>,</li>
+              <li>view the <span style="color:#5288eb">system prediction</span>, </li>
+              <li>specify the <span style="color:#5288eb">comparative emotion class</span>,</li>
+              <li>view or listen to various <span style="color:#5288eb">relatable explanations</span>.</li>
+            </ul>
           </em></span>
         </section>
         </br>
-        </br>  
+          
         <section id="main_content">
-        	<span style="font-size:19px; line-height:200%;">Play this voice clip 
+          <h1> Demo </h1>
+        	<span style="font-size:17px; line-height:200%;">Play this voice clip 
             <select id="changeInstance" style=""><option value="1">Sample 1</option><option value="2">Sample 2</option><option value="3">Sample 3</option></select>
             <audio preload="auto" id="targetSample" controls="true" class="qmedia"><source type="audio/wav" src="instance1/Target.wav"></audio>. </br></span>
 
-        	<span style="font-size:19px; line-height:200%;">The system recognized the voice as <u><span id="label">Disgust</span></u>. </br></span>
+        	<span style="font-size:17px; line-height:200%;">The system recognized the voice as <u><span id="label">Disgust</span></u>. </br></span>
 
-        	<span style="font-size:19px; line-height:200%;">The system has analyzed that, compared with 
+        	<span style="font-size:17px; line-height:200%;">The system has analyzed that, compared with 
         		<select id="changeEmot" style=""><option value="1">Neutral</option><option value="2">Calm</option><option value="3">Happy</option><option value="4">Fearful</option><option value="5">Surprised</option><option value="6">Sad</option><option value="7">Disgust</option><option value="8">Angry</option> </select>
         		<audio preload="auto" id="compareSample" controls="true" class="qmedia"><source type="audio/wav" src="instance1/2Neutral.wav"></audio>,</br>
             
         	</span>
         	
         	<ul style="margin-left:30px;">
-    			 	<li><span style="font-size:19px;">The voice has: </span>
+    			 	<li><span style="font-size:17px;">The voice has: </span>
     					<ul>
-    					  	<li id="shrillness"><span style="font-size:19px;"><span style="color:#171379">Higher</span>&nbsp;shrillness</span></li>
-    					  	<li id="loudness"><span style="font-size:19px;"><span style="color:#171379">Higher</span>&nbsp;loudness</span></li>
-    					  	<li id="pitchmean"><span style="font-size:19px;"><span style="color:#bdc3c7">Similar</span>&nbsp;average pitch</span></li>
-    					  	<li id="pitchsd"><span style="font-size:19px;"><span style="color:#bdc3c7">Similar</span>&nbsp;range of pitch</span></li>
-    					  	<li id="speed"><span style="font-size:19px;"><span style="color:#e74c3c">Lower</span>&nbsp;speed</span></li>
-    					  	<li id="pause"><span style="font-size:19px;"><span style="color:#bdc3c7">Similar</span>&nbsp;pauses</span></li>
+    					  	<li id="shrillness"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;shrillness</span></li>
+    					  	<li id="loudness"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;loudness</span></li>
+    					  	<li id="pitchmean"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;average pitch</span></li>
+    					  	<li id="pitchsd"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;range of pitch</span></li>
+    					  	<li id="speed"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;speed</span></li>
+    					  	<li id="pause"><span style="font-size:17px;"><span style="color:#e74c3c">Fewer</span>&nbsp;pauses</span></li>
     					</ul>
     			 	</li>
-    			 	<li><span style="font-size:19px;">During in the highlighted moments below.</span>
+    			 	<li><span style="font-size:17px;">During in the highlighted moments below.</span>
     				 	<ul>
-    				  		<li><div><span style="font-size:19px;"><img style="width: 400px; height: 55px;" src="instance1/VsNeutral.png" class="saliency" id="saliencyBar"></span></div></li>
+    				  		<li><div><span style="font-size:17px;"><img style="width: 350px; height: 48px;" src="instance1/VsNeutral.png" class="saliency" id="saliencyBar"></span></div></li>
     				 	</ul>
     				</li>
     			</ul>
         </section>
-         
+        </br>
+
+        <section id="reading">
+          <h1> Further reading </h1>
+          <p>
+            <span id="firstAuthor">Zhang, W.</span>, Lim, B. Y. 2022. 
+            <a href="https://arxiv.org/pdf/2112.14005.pdf" > <span class="paperTitle" style="color:#5288eb;">Towards Relatable Explainable AI with the Perceptual Process </span></a>
+            <span class="conferenceTitle"><em> in Proceedings of the international Conference on Human Factors in Computing Systems. CHI ’22.</span></em>
+
+          </p>
+          </em></span>
+        </section> 
+
         <footer>
           This demo page is maintained by <a href="">Wencan</a>, generated by <a href="https://pages.github.com">GitHub Pages</a>. 
           <!-- Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>. -->
@@ -73,7 +94,7 @@
           var emotList = ['Neutral', 'Calm', 'Happy', 'Fearful', 'Surprised', 'Sad', 'Disgust', 'Angry']; 
           var colorMap = {'Lower':'#e74c3c', 'Fewer':'#e74c3c', 'Similar':'#bdc3c7', 'More': '#171379', 'Higher': '#171379'};
           var targetSamples = ['Disgust', 'Happy', 'Angry'];
-          var colorPrefix = '<span style="font-size:19px;"><span style="color:';
+          var colorPrefix = '<span style="font-size:17px;"><span style="color:';
           var targetIdx = "1";
           var targetSample = targetSamples[0];
           var compareSample = "Neutral";
