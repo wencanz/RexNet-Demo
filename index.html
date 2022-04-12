@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <!--[if lt IE 9]>
@@ -21,39 +20,39 @@
       <div class="inner">
         <header>
           <h1>Relatable Explanations</h1>
-          <h2>for speech emotion recognition</h2>
+          <!-- <h2>for speech emotion recognition</h2> -->
           <!-- </br> -->
         </header>
 
-        <section id="instruction_content">
+<!--         <section id="instruction_content">
           <h1> How to use </h1>
-          <span style="font-size:17px; line-height:150%;"><em>
+          <span style="font-size:17px; line-height:150%;">
             <ul style="margin-left:30px;">
               <li>Specify the <span style="color:#5288eb">speech sample</span>,</li>
               <li>View the <span style="color:#5288eb">system prediction</span>, </li>
-              <li>Specify the <span style="color:#5288eb">comparative emotion class</span>,</li>
-              <li>View or listen to various <span style="color:#5288eb">relatable explanations</span>.</li>
+              <li>specify the <span style="color:#5288eb">comparative emotion class</span>,</li>
+              <li>view or listen to various <span style="color:#5288eb">relatable explanations</span>.</li>
             </ul>
-          </em></span>
+          </span>
         </section>
-        </br>
+        </br> -->
           
         <section id="main_content">
-          <h1> Demo </h1>
+          <h1> Demo on speech emotion recognition </h1>
+          </br>
         	<span style="font-size:17px; line-height:200%;">Play this voice clip 
-            <select id="changeInstance" style=""><option value="1">Sample 1</option><option value="2">Sample 2</option><option value="3">Sample 3</option></select>
-            <audio preload="auto" id="targetSample" controls="true" class="qmedia"><source type="audio/wav" src="instance1/Target.wav"></audio>. </br></span>
+            <div class="tooltip"> <select id="changeInstance" style=""><option value="1">Sample 1</option><option value="2">Sample 2</option><option value="3">Sample 3</option></select> <span class="tooltiptext" style="margin-left: -40px; width: 250px;">Try a different speech sample. </span></div>
+            <div class="tooltip"> <audio preload="auto" id="targetSample" controls="true" class="qmedia"><source type="audio/wav" src="instances/instance1/Target.wav"></audio> <span class="tooltiptext" style="margin-left: -70px; width: 280px;">Play and judge the target speech. </span></div>. </br></span>
 
-        	<span style="font-size:17px; line-height:200%;">The system recognized the voice as <u><span id="label">Happy</span></u>. </br></span>
+        	<span style="font-size:17px; line-height:200%;">The system recognized the voice as <div class="tooltip" style="height:30px;"><span id="label"> Disgust </span><span class="tooltiptext" style="margin-left: -10px; width: 260px;">Check the system's prediction.</span> </div>. </br></span>
 
         	<span style="font-size:17px; line-height:200%;">The system has analyzed that, compared with 
-        		<select id="changeEmot" style=""><option value="1">Neutral</option><option value="2">Calm</option><option value="3">Happy</option><option value="4">Fearful</option><option value="5">Surprised</option><option value="6">Sad</option><option value="7">Disgust</option><option value="8">Angry</option> </select>
-        		<audio preload="auto" id="compareSample" controls="true" class="qmedia"><source type="audio/wav" src="instance1/2Neutral.wav"></audio>,</br>
-            
+        		<div class="tooltip"> <select id="changeEmot" style=""><option value="1">Neutral</option><option value="2">Calm</option><option value="3">Happy</option><option value="4">Fearful</option><option value="5">Surprised</option><option value="6">Sad</option><option value="7">Disgust</option><option value="8">Angry</option> </select> <span class="tooltiptext" style="margin-left:-50px; width: 330px;">Specify the contrastive emotion class.</span> </div>
+        		<div class="tooltip"> <audio preload="auto" id="compareSample" controls="true" class="qmedia"><source type="audio/wav" src="instances/instance1/2Neutral.wav"></audio><span class="tooltiptext" style="margin-left:-80px; width:310px;">Listen to the counterfactual sample.</span></div>,</br>
         	</span>
         	
         	<ul style="margin-left:30px;">
-    			 	<li><span style="font-size:17px;">The voice has: </span>
+    			 	<li><span style="font-size:17px;"> <div class="tooltip" style="height:25px;">The voice has: <span class="tooltiptext" style="margin-left:-40px; width: 230px;">View the contrastive cues.</span></div></span>
     					<ul>
     					  	<li id="shrillness"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;shrillness</span></li>
     					  	<li id="loudness"><span style="font-size:17px;"><span style="color:#171379">Higher</span>&nbsp;loudness</span></li>
@@ -63,9 +62,9 @@
     					  	<li id="pause"><span style="font-size:17px;"><span style="color:#e74c3c">Fewer</span>&nbsp;pauses</span></li>
     					</ul>
     			 	</li>
-    			 	<li><span style="font-size:17px;">During in the highlighted moments below.</span>
+    			 	<li><span style="font-size:17px;">During in the <div class="tooltip" style="height:25px;"> highlighted moments below <span class="tooltiptext" style="margin-left:-80px; width: 250px;">View the contrastive saliency.</span></div>.</span>
     				 	<ul>
-    				  		<li><div><span style="font-size:17px;"><img style="width: 350px; height: 48px;" src="instance1/VsNeutral.png" class="saliency" id="saliencyBar"></span></div></li>
+    				  		<li><div><span style="font-size:17px;"><img style="width: 350px; height: 48px;" src="instances/instance1/VsNeutral.png" class="saliency" id="saliencyBar"></span></div></li>
     				 	</ul>
     				</li>
     			</ul>
@@ -85,7 +84,6 @@
 
         <footer>
           This demo page is maintained by <a href="">Wencan</a>, generated by <a href="https://pages.github.com">GitHub Pages</a>. 
-          <!-- Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>. -->
         </footer>
         <script type="text/javascript">
           var figure = $('#saliencyBar')[0];
@@ -93,7 +91,7 @@
           var compareWav = $('#compareSample')[0];
           var emotList = ['Neutral', 'Calm', 'Happy', 'Fearful', 'Surprised', 'Sad', 'Disgust', 'Angry']; 
           var colorMap = {'Lower':'#e74c3c', 'Fewer':'#e74c3c', 'Similar':'#bdc3c7', 'More': '#171379', 'Higher': '#171379'};
-          var targetSamples = ['Happy', 'Disgust', 'Angry'];
+          var targetSamples = ['Disgust', 'Happy', 'Angry'];
           var colorPrefix = '<span style="font-size:17px;"><span style="color:';
           var targetIdx = "1";
           var targetSample = targetSamples[0];
@@ -101,8 +99,8 @@
 
           $('#changeEmot').change(function() {
             compareSample = emotList[this.value-1];
-            figure.src = "instance"+targetIdx+"/Vs"+compareSample+".png";
-            compareWav.src = "instance"+targetIdx+"/2"+compareSample+".wav";
+            figure.src = "instances/instance"+targetIdx+"/Vs"+compareSample+".png";
+            compareWav.src = "instances/instance"+targetIdx+"/2"+compareSample+".wav";
             compareWav.play();
             
             var cueTable = d3.csv("query_table.csv",              
@@ -125,9 +123,9 @@
             compareSample = "Neutral";
             targetSample = targetSamples[this.value-1];
             document.getElementById("label").innerHTML = targetSample;
-            figure.src = "instance"+targetIdx+"/Vs"+compareSample+".png";
-            targetWav.src = "instance"+targetIdx+"/Target.wav";
-            compareWav.src = "instance"+targetIdx+"/2"+compareSample+".wav";
+            figure.src = "instances/instance"+targetIdx+"/Vs"+compareSample+".png";
+            targetWav.src = "instances/instance"+targetIdx+"/Target.wav";
+            compareWav.src = "instances/instance"+targetIdx+"/2"+compareSample+".wav";
             $('#changeEmot').val('1');
             
             var cueTable = d3.csv("query_table.csv",
