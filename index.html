@@ -44,7 +44,7 @@
             <div class="tooltip"> <select id="changeInstance" style=""><option value="1">Sample 1</option><option value="2">Sample 2</option><option value="3">Sample 3</option></select> <span class="tooltiptext" style="margin-left: -40px; width: 250px;">Try a different speech sample. </span></div>
             <div class="tooltip"> <audio preload="auto" id="targetSample" controls="true" class="qmedia"><source type="audio/wav" src="instances/instance1/Target.wav"></audio> <span class="tooltiptext" style="margin-left: -70px; width: 280px;">Play and judge the target speech. </span></div>. </br></span>
 
-        	<span style="font-size:17px; line-height:200%;">The system recognized the voice as <div class="tooltip" style="height:30px;"><span id="label"> Disgust </span><span class="tooltiptext" style="margin-left: -10px; width: 260px;">Check the system's prediction.</span> </div>. </br></span>
+        	<span style="font-size:17px; line-height:200%;">The system recognized the voice as <div class="tooltip" style="height:30px;"><span id="label"> Happy </span><span class="tooltiptext" style="margin-left: -10px; width: 260px;">Check the system's prediction.</span> </div>. </br></span>
 
         	<span style="font-size:17px; line-height:200%;">The system has analyzed that, compared with 
         		<div class="tooltip"> <select id="changeEmot" style=""><option value="1">Neutral</option><option value="2">Calm</option><option value="3">Happy</option><option value="4">Fearful</option><option value="5">Surprised</option><option value="6">Sad</option><option value="7">Disgust</option><option value="8">Angry</option> </select> <span class="tooltiptext" style="margin-left:-50px; width: 330px;">Specify the contrastive emotion class.</span> </div>
@@ -91,7 +91,7 @@
           var compareWav = $('#compareSample')[0];
           var emotList = ['Neutral', 'Calm', 'Happy', 'Fearful', 'Surprised', 'Sad', 'Disgust', 'Angry']; 
           var colorMap = {'Lower':'#e74c3c', 'Fewer':'#e74c3c', 'Similar':'#bdc3c7', 'More': '#171379', 'Higher': '#171379'};
-          var targetSamples = ['Disgust', 'Happy', 'Angry'];
+          var targetSamples = ['Happy', 'Disgust', 'Angry'];
           var colorPrefix = '<span style="font-size:17px;"><span style="color:';
           var targetIdx = "1";
           var targetSample = targetSamples[0];
